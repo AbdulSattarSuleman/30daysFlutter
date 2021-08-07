@@ -1,9 +1,16 @@
 import 'package:day3/utils/routes.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  String name = '';
+  bool changeButton = false;
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -12,12 +19,12 @@ class LoginPage extends StatelessWidget {
         child: Column(
           children: [
             Image.asset(
-              'assets/images/login.png',
+              "assets/images/login.png",
               fit: BoxFit.contain,
               height: 250,
             ),
-            const Text(
-              'Welcome',
+            Text(
+              'Welcome $name',
               style: TextStyle(
                 fontSize: 29.0,
                 fontWeight: FontWeight.bold,
@@ -36,6 +43,10 @@ class LoginPage extends StatelessWidget {
                       border: OutlineInputBorder(),
                       labelText: "Username",
                     ),
+                    onChanged: (value) {
+                      name = value;
+                      setState(() {});
+                    },
                   ),
                   SizedBox(
                     height: 20,
@@ -52,19 +63,35 @@ class LoginPage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  ElevatedButton(
-                    onPressed: () {
+                  InkWell(
+                    onTap: ()async{
+                      setState(() {
+                        changeButton = true;
+                      });
+                      await Future.delayed(Duration(seconds: 1));
                       Navigator.pushNamed(context, MyRoutes.HomePage);
                     },
-                    // ignore: prefer_const_constructors
-                    child: Text(
-                      'Login',
+                    child: AnimatedContainer(
+                      duration: Duration(seconds: 1),
                       // ignore: prefer_const_constructors
-                      style: TextStyle(fontSize: 20),
-                    ),
-                    style: TextButton.styleFrom(
-                      elevation: 3,
-                      minimumSize: Size(150, 30),
+                      decoration: BoxDecoration(
+                        color: Colors.deepPurple,
+                        // shape: changeButton?BoxShape.circle:BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(changeButton?80: 6)
+                      ),
+                      width: changeButton?80:120,
+                      height: 50,
+                      alignment: Alignment.center,
+                      
+                      // ignore: prefer_const_constructors
+                      child: changeButton?Icon(Icons.verified_user_sharp,color: Colors.white):Text(
+                        'Login',
+                        // ignore: prefer_const_constructors
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                        ),
+                      ),
                     ),
                   )
                 ],
