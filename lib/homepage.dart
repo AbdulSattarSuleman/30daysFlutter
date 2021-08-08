@@ -1,4 +1,7 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:day3/utils/routes.dart';
+import 'package:day3/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
 
@@ -12,6 +15,7 @@ class HomePage extends StatelessWidget {
           title: Text('Text'),
           centerTitle: true,
         ),
+        drawer: MyDrawer(),
         body: Container(
           child: Center(
             child: Text('Welcome To Dea Trust'),
