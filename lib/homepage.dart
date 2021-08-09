@@ -4,7 +4,6 @@ import 'package:day3/utils/routes.dart';
 import 'package:day3/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
-
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -12,16 +11,14 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Text'),
+          title: Text('Catalog App'),
           centerTitle: true,
         ),
         drawer: MyDrawer(),
         body: Container(
           child: Center(
-            child: Text('Welcome To Dea Trust'),
+            child: Text('Welcome To BrainCrop'),
           ),
         ));
   }
-
-  
 }

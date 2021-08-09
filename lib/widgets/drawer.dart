@@ -24,18 +24,25 @@ class _MyDrawerState extends State<MyDrawer> {
             DrawerHeader(
               padding: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
+                margin: EdgeInsets.only(top: 5),
                 currentAccountPicture: CircleAvatar(
                   backgroundImage: NetworkImage(imageUrl),
                 ),
-                accountName: Text("Abdul Sattar"),
-                accountEmail: Text('a.abdulsattarsuleman@gmail.com'),
+                accountName: Text(
+                  "Abdul Sattar",
+                  textScaleFactor: 1.2,
+                ),
+                accountEmail: Text(
+                  'a.abdulsattarsuleman@gmail.com',
+                  textScaleFactor: 1.2,
+                ),
               ),
             ),
             ListTile(
               leading: Icon(CupertinoIcons.home, color: Colors.white),
               title: Text(
                 "Home",
-                textScaleFactor: 1.6,
+                textScaleFactor: 1.5,
                 style: TextStyle(
                   color: Colors.white,
                 ),
@@ -45,7 +52,7 @@ class _MyDrawerState extends State<MyDrawer> {
               leading: Icon(CupertinoIcons.info, color: Colors.white),
               title: Text(
                 "About",
-                textScaleFactor: 1.6,
+                textScaleFactor: 1.5,
                 style: TextStyle(
                   color: Colors.white,
                 ),
@@ -56,7 +63,7 @@ class _MyDrawerState extends State<MyDrawer> {
                   Icon(CupertinoIcons.profile_circled, color: Colors.white),
               title: Text(
                 "Gallery",
-                textScaleFactor: 1.6,
+                textScaleFactor: 1.5,
                 style: TextStyle(
                   color: Colors.white,
                 ),
@@ -66,7 +73,7 @@ class _MyDrawerState extends State<MyDrawer> {
               leading: Icon(CupertinoIcons.phone, color: Colors.white),
               title: Text(
                 "Contact",
-                textScaleFactor: 1.6,
+                textScaleFactor: 1.5,
                 style: TextStyle(
                   color: Colors.white,
                 ),
