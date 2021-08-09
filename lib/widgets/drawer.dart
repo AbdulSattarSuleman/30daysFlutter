@@ -26,6 +26,7 @@ class _MyDrawerState extends State<MyDrawer> {
               child: UserAccountsDrawerHeader(
                 margin: EdgeInsets.only(top: 5),
                 currentAccountPicture: CircleAvatar(
+                  radius: 150,
                   backgroundImage: NetworkImage(imageUrl),
                 ),
                 accountName: Text(

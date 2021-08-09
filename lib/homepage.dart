@@ -9,6 +9,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //Context =? Element = Location
     return Scaffold(
         appBar: AppBar(
           title: Text('Catalog App'),
@@ -17,7 +18,7 @@ class HomePage extends StatelessWidget {
         drawer: MyDrawer(),
         body: Container(
           child: Center(
-            child: Text('Welcome To BrainCrop'),
+            child: Text(context.runtimeType.toString()),
           ),
         ));
   }
