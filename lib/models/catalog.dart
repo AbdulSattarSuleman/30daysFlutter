@@ -1,5 +1,9 @@
+class CatalogModel {
+  static List<Item> items = [];
+}
+
 class Item {
-  final String id;
+  final int id;
   final String name;
   final String desc;
   final num price;
@@ -13,13 +17,25 @@ class Item {
       required this.price,
       required this.color,
       required this.image});
-  final products = [
-    Item(
-        id: "p-01",
-        name: "hero Product",
-        desc: "Lorem ipsum dolor sit amet",
-        price: 100,
-        color: "#53505a",
-        image: "http://placehold.it/940x300/999/CCC")
-  ];
+
+  //For Named Constructor<String [Id] Data type, dynamic value data type>
+  // Decode Data Create Class from Map
+  factory Item.fromMap(Map<String, dynamic> map) {
+    return Item(
+        id: map['id'], //Dictionary id get value
+        name: map['name'],
+        desc: map['desc'],
+        price: map['price'],
+        color: map['color'],
+        image: map['image']);
+  }
+  //Create Map From Class for Encode data
+  toMap() => {
+        "id": id,
+        "name": name,
+        "desc": desc,
+        "price": price,
+        "color": color,
+        "image": image,
+      };
 }
