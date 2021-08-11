@@ -40,12 +40,40 @@ class _HomePageState extends State<HomePage> {
         title: Text('Catalog App'),
       ),
       drawer: MyDrawer(),
-      body: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-          ? ListView.builder(
+      body: (CatalogModel.items.isNotEmpty)
+          ? GridView.builder(
               itemCount: CatalogModel.items.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisSpacing: 5,
+                mainAxisSpacing: 20,
+                crossAxisCount: 2,
+              ),
               itemBuilder: (context, index) {
-                return ItemWidget(item: CatalogModel.items[index]);
-              })
+                final item = CatalogModel.items[index];
+                return Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    clipBehavior: Clip.antiAlias,
+                    child: GridTile(
+                      header: Container(
+                        padding: const EdgeInsets.all(10),
+                        child: Text(
+                          item.name,
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        decoration: BoxDecoration(color: Colors.deepPurple),
+                      ),
+                      child: Image.network(item.image),
+                      footer: Container(
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(color: Colors.black),
+                          child: Text(
+                            item.price.toString(),
+                            style: TextStyle(color: Colors.white),
+                          )),
+                    ));
+              },
+            )
           : Center(
               //Progrss Bar
               child: CircularProgressIndicator(),
