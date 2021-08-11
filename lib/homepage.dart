@@ -4,6 +4,7 @@ import 'package:day3/widgets/drawer.dart';
 import 'package:day3/widgets/item_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -36,48 +37,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Catalog App'),
-      ),
-      drawer: MyDrawer(),
-      body: (CatalogModel.items.isNotEmpty)
-          ? GridView.builder(
-              itemCount: CatalogModel.items.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisSpacing: 5,
-                mainAxisSpacing: 20,
-                crossAxisCount: 2,
-              ),
-              itemBuilder: (context, index) {
-                final item = CatalogModel.items[index];
-                return Card(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                    clipBehavior: Clip.antiAlias,
-                    child: GridTile(
-                      header: Container(
-                        padding: const EdgeInsets.all(10),
-                        child: Text(
-                          item.name,
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        decoration: BoxDecoration(color: Colors.deepPurple),
-                      ),
-                      child: Image.network(item.image),
-                      footer: Container(
-                          padding: const EdgeInsets.all(10),
-                          decoration: BoxDecoration(color: Colors.black),
-                          child: Text(
-                            item.price.toString(),
-                            style: TextStyle(color: Colors.white),
-                          )),
-                    ));
-              },
-            )
-          : Center(
-              //Progrss Bar
-              child: CircularProgressIndicator(),
-            ),
-    );
+        appBar: AppBar(
+          title: Text('Catalog App'),
+        ),
+        body: Column(
+          children: [],
+        ));
   }
 }
