@@ -1,9 +1,8 @@
+import 'package:day3/pages/homepage.dart';
 import 'package:day3/pages/login_page.dart';
 import 'package:day3/utils/routes.dart';
 import 'package:day3/widgets/themes.dart';
 import 'package:flutter/material.dart';
-
-import 'homepage.dart';
 
 void main() {
   runApp(MyApp());
