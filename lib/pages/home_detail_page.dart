@@ -15,6 +15,7 @@ class HomeDetaiPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: MyTheme.creemColor,
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         centerTitle: true,
         title: Text(catalog.name),
       ),
@@ -24,14 +25,14 @@ class HomeDetaiPage extends StatelessWidget {
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
           children: [
-            "\$${catalog.price}".text.bold.xl4.red500.make(),
+            "\$${catalog.price}".text.bold.xl4.red800.make(),
             ElevatedButton(
                     onPressed: () {},
                     style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all(MyTheme.darkBlueish),
                     ),
-                    child: "Buy".text.make())
+                    child: "Buy".text.lg.make())
                 .wh(100, 30)
           ],
         ).p32(),
@@ -52,17 +53,20 @@ class HomeDetaiPage extends StatelessWidget {
               child: Container(
                 width: context.screenWidth,
                 color: Colors.white,
-                child: Column(
-                  children: [
-                    catalog.name.text.bold.xl3
-                        .color(MyTheme.darkBlueish)
-                        .make(),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    catalog.desc.text.make(),
-                  ],
-                ).py64(),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      catalog.name.text.bold.xl3
+                          .color(MyTheme.darkBlueish)
+                          .make(),
+                      catalog.desc.text.xl.make(),
+                      "His his light gathered his yet. Passion birth his holy the that be had, ear from it a his ne to to, cell had did shrine these resolved bacchanals now, now love blazon artless lurked in, gathered happy longdeserted pride if, within scarce massy bacchanals in and sadness where, and."
+                          .text
+                          .make()
+                          .p16()
+                    ],
+                  ).py32(),
+                ),
               ),
             ))
           ],
