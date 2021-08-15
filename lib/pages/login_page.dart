@@ -21,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
       });
       // ignore: prefer_const_constructors
       await Future.delayed(Duration(seconds: 1));
-      await Navigator.pushNamed(context, MyRoutes.HomePage);
+      await Navigator.pushNamed(context, MyRoutes.homePage);
       setState(() {
         changeButton = false;
       });

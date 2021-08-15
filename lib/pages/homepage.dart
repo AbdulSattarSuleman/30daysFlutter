@@ -1,8 +1,10 @@
 import 'dart:convert';
 import 'package:day3/models/catalog.dart';
+import 'package:day3/utils/routes.dart';
 import 'package:day3/widgets/home_widgets/catalog_header.dart';
 import 'package:day3/widgets/home_widgets/catalog_list.dart';
 import 'package:day3/widgets/themes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -38,6 +40,13 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.pushNamed(context, MyRoutes.cartPage),
+        child: const Icon(
+          CupertinoIcons.cart,
+        ),
+        backgroundColor: MyTheme.darkBlueish,
+      ),
       backgroundColor: MyTheme.creemColor,
       body: SafeArea(
         child: Container(
