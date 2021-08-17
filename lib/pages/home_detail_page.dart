@@ -13,14 +13,14 @@ class HomeDetaiPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MyTheme.creemColor,
+      backgroundColor: context.canvasColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         centerTitle: true,
         title: Text(catalog.name),
       ),
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -30,7 +30,7 @@ class HomeDetaiPage extends StatelessWidget {
                     onPressed: () {},
                     style: ButtonStyle(
                       backgroundColor:
-                          MaterialStateProperty.all(MyTheme.darkBlueish),
+                          MaterialStateProperty.all(context.theme.buttonColor),
                     ),
                     child: "Buy".text.lg.make())
                 .wh(100, 30)
@@ -52,12 +52,12 @@ class HomeDetaiPage extends StatelessWidget {
               edge: VxEdge.TOP,
               child: Container(
                 width: context.screenWidth,
-                color: Colors.white,
+                color: context.cardColor,
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
                       catalog.name.text.bold.xl3
-                          .color(MyTheme.darkBlueish)
+                          .color(context.accentColor)
                           .make(),
                       catalog.desc.text.xl.make(),
                       "His his light gathered his yet. Passion birth his holy the that be had, ear from it a his ne to to, cell had did shrine these resolved bacchanals now, now love blazon artless lurked in, gathered happy longdeserted pride if, within scarce massy bacchanals in and sadness where, and."
