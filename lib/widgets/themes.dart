@@ -11,10 +11,13 @@ class MyTheme {
       canvasColor: creemColor,
       buttonColor: darkBlueish,
       appBarTheme: AppBarTheme(
-          color: Colors.white,
-          elevation: 0.0,
-          iconTheme: IconThemeData(color: Colors.black),
-          textTheme: Theme.of(context).textTheme), colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.deepPurple).copyWith(secondary: Colors.deepPurple));
+        color: Colors.white,
+        elevation: 0.0,
+        iconTheme: IconThemeData(color: Colors.black),
+        textTheme: Theme.of(context).textTheme,
+      ),
+      colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.deepPurple)
+          .copyWith(secondary: Colors.deepPurple));
 
   static ThemeData darkTheme(BuildContext context) => ThemeData(
       brightness: Brightness.dark,
