@@ -1,8 +1,9 @@
 //CatalogList
+// ignore_for_file: deprecated_member_use, prefer_const_constructors
+
 import 'package:day3/models/catalog.dart';
 import 'package:day3/pages/home_detail_page.dart';
-import 'package:day3/utils/routes.dart';
-import 'package:day3/widgets/themes.dart';
+
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 

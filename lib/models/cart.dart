@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import 'package:day3/models/catalog.dart';
 
 class CartModel {

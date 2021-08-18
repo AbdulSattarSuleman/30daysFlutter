@@ -1,5 +1,7 @@
 
 
+// ignore_for_file: deprecated_member_use
+
 import 'package:day3/models/catalog.dart';
 
 import 'package:flutter/material.dart';
