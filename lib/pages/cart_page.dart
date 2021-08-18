@@ -14,7 +14,7 @@ class CartPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         centerTitle: true,
-        title: "Cart".text.make(),
+        title: "Cart".text.color(Theme.of(context).accentColor).make(),
       ),
       body: Column(
         children: [
@@ -40,7 +40,10 @@ class _CartTotal extends StatelessWidget {
           "\$9999".text.xl3.color(context.theme.accentColor).make(),
           30.widthBox,
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: "Buying Not Suppored Yet".text.make()));
+            },
             style: ButtonStyle(
               backgroundColor:
                   MaterialStateProperty.all(context.theme.buttonColor),
