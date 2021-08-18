@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, unnecessary_null_comparison
+
 import 'dart:convert';
 import 'package:day3/models/catalog.dart';
 import 'package:day3/utils/routes.dart';
@@ -25,10 +27,11 @@ class _HomePageState extends State<HomePage> {
 
   loadData() async {
     await Future.delayed(Duration(seconds: 3));
-    final CatalogJson =
+    final catalogJson =
         await rootBundle.loadString("assets/files/catalog.json");
-    final decodedData = jsonDecode(CatalogJson);
+    final decodedData = jsonDecode(catalogJson);
     var productData = decodedData["products"];
+    // ignore: avoid_print
     print(productData);
     //Create List
     CatalogModel.items =
