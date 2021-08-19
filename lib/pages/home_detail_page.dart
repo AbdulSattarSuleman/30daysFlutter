@@ -1,8 +1,7 @@
-
-
 // ignore_for_file: deprecated_member_use
 
 import 'package:day3/models/catalog.dart';
+import 'package:day3/widgets/home_widgets/add_to_cart.dart';
 
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -19,7 +18,10 @@ class HomeDetaiPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         centerTitle: true,
-        title: Text(catalog.name),
+        title: Text(
+          catalog.name,
+          style: TextStyle(color: context.theme.accentColor),
+        ),
       ),
       bottomNavigationBar: Container(
         color: context.cardColor,
@@ -28,14 +30,9 @@ class HomeDetaiPage extends StatelessWidget {
           buttonPadding: EdgeInsets.zero,
           children: [
             "\$${catalog.price}".text.bold.xl4.red800.make(),
-            ElevatedButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(context.theme.buttonColor),
-                    ),
-                    child: "Buy".text.lg.make())
-                .wh(100, 30)
+            AddToCart(
+              catalog: catalog,
+            ).wh(100, 30)
           ],
         ).p32(),
       ),
